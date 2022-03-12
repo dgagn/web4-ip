@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-composer fix-cs && prettier resources/scss/**/* resources/js/**/* webpack.mix.js tailwind.config.js --write && git add -A .
+composer fix-cs && prettier resources/scss/**/* resources/js/**/* webpack.mix.js tailwind.config.js --write && php artisan test && git add -A .
