@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <div class="secondary-glow"></div>
     <div class="container max-w-sm min-h-screen flex items-center justify-center">
         <div class="w-full">
@@ -17,4 +17,4 @@
             </form>
         </div>
     </div>
-</x-guest-layout>
+</x-app-layout>

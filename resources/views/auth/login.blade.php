@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <div class="container max-w-sm mt-2xl">
         <div class="main-glow absolute h-[12rem] w-[12rem] "></div>
         <h2 class="text-center">Log in</h2>
@@ -38,4 +38,4 @@
             </div>
         </form>
     </div>
-</x-guest-layout>
+</x-app-layout>

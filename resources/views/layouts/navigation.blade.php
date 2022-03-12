@@ -6,5 +6,6 @@
     @else
         Not auth
     @endif
+
     <theme-switcher></theme-switcher>
 </nav>
