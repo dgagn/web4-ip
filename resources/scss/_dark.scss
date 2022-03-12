@@ -9,7 +9,7 @@ $dark-colors: (
     error: mapReverse($red),
     success: mapReverse($green),
     warning: mapReverse($yellow),
-    caution: mapReverse($orange)
+    caution: mapReverse($orange),
 );
 
 .dark {

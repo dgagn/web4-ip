@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-sail composer fix-cs && prettier resources/scss/**/* resources/js/**/* --write && git add -A .
+composer fix-cs && prettier resources/scss/**/* resources/js/**/* --write && git add -A .

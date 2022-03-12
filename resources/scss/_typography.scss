@@ -16,7 +16,7 @@ $text-sizes: (
 $text: (
     base: 1rem,
     scale: 1.2,
-    unit: var(--text-base)
+    unit: var(--text-base),
 ) !default;
 
 :root {
@@ -30,7 +30,8 @@ $text: (
     }
 }
 
-:root, * {
+:root,
+* {
     @each $text-size, $value in $text-sizes {
         --text-#{$text-size}: #{$value};
     }

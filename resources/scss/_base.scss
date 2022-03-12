@@ -2,7 +2,10 @@
     body {
         @apply text-base font-sans leading-normal font-normal text-contrast-700 bg-bg antialiased selection:bg-primary-200/50;
     }
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
         @apply leading-tight font-bold text-contrast-900;
     }
     h1 {
@@ -42,8 +45,8 @@
     mark {
         @apply bg-transparent;
         background-image: linear-gradient(
-                theme('colors.transparent') 50%,
-                theme('colors.primary.100') 50%
+            theme("colors.transparent") 50%,
+            theme("colors.primary.100") 50%
         );
     }
 

@@ -7,11 +7,11 @@ $colors: (
     error: $red,
     success: $green,
     warning: $yellow,
-    caution: $orange
+    caution: $orange,
 );
 
 :root {
-    --color-bg: '255 255 255'; // white
+    --color-bg: "255 255 255"; // white
     @each $color, $value in $colors {
         @each $color-intensity, $hsl in $value {
             --color-#{$color}-#{$color-intensity}: #{$hsl};
