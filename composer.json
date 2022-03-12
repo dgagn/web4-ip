@@ -18,7 +18,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.7"
     },
     "autoload": {
         "psr-4": {
@@ -33,6 +34,12 @@
         }
     },
     "scripts": {
+        "fix-cs": [
+            "npx prettier app/**/* database/**/* routes/**/* --write",
+            "php-cs-fixer fix app",
+            "php-cs-fixer fix database",
+            "php-cs-fixer fix routes"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
