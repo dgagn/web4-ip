@@ -1,18 +1,12 @@
 <x-guest-layout>
     <div class="container max-w-sm mt-2xl">
-
+        <div class="main-glow absolute h-[12rem] w-[12rem] "></div>
         <h2 class="text-center">Log in</h2>
         <p class="text-center mt-md mx-auto text-contrast-500">
             Log in to your account.
         </p>
 
-        @if($errors->any())
-            <ul class="text-error-500 text-center mt-lg">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+        <x-error class="mt-md" :error="$errors"></x-error>
 
         <form action="{{ route('login') }}" method="post">
             @csrf
@@ -37,7 +31,7 @@
                 </label>
             </div>
 
-            <button class="btn mt-md w-full bg-primary-500 text-primary-50 hover:bg-primary-600">Login</button>
+            <x-button class="w-full mt-md">Log in</x-button>
 
             <div class="text-center mt-md">
                 <p class="text-sm">Don't have an account? <a href="{{route('register')}}">Get started</a></p>

@@ -13,6 +13,7 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view("layouts.app");
+        $value = $_COOKIE['theme'] ?? 'light';
+        return view("layouts.app", ["theme" => $value]);
     }
 }
