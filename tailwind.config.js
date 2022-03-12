@@ -22,8 +22,10 @@ module.exports = {
     "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
+    "./resources/js/**/*",
   ],
-
+  darkMode: "class",
+  mode: "jit",
   theme: {
     colors: {
       primary: generateColorMap("--color-primary"),
@@ -101,5 +103,9 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: "class",
+    }),
+  ],
 };

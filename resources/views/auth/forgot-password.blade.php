@@ -1,36 +1,40 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+    <div class="container max-w-sm mt-2xl">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
+        <h2 class="text-center">Forgot your password?</h2>
+        <p class="text-center mt-md mx-auto text-contrast-500">
+            We will email you a password reset link that will allow you to choose a new one.
+        </p>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+        @if($errors->any())
+            <ul class="text-error-500 text-center mt-lg">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <dgagn-alert message="yO"></dgagn-alert>
 
-        <form method="POST" action="{{ route('password.email') }}">
+        <form action="{{ route('password.email') }}" method="post">
             @csrf
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <div class="mt-lg">
+                <label class="mb-3xs" for="email">Email</label>
+                <input type="email" id="email" name="email" class="w-full @if($errors->any()) border border-error-500/80 !bg-error-50 @endif" value="{{old('email')}}" required autofocus>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
+            <button class="btn mt-md w-full bg-primary-500 text-primary-50 hover:bg-primary-600">Request reset link</button>
+
+            <div class="text-center mt-sm">
+                <p class="text-sm"><a href="{{route('login')}}">&larr; Back to login</a></p>
             </div>
         </form>
-    </x-auth-card>
+    </div>
+
+    <h1>{{session('status')}}</h1>
+
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+
 </x-guest-layout>

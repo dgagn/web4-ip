@@ -3,7 +3,7 @@
 @use "sass:map";
 
 $dark-colors: (
-  primary: mapReverse($teal),
+  primary: mapReverse($blue),
   secondary: mapReverse($purple),
   contrast: mapReverse($slate),
   error: mapReverse($red),

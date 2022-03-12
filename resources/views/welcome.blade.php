@@ -21,7 +21,7 @@
                 <input class="w-full" type="email" name="input-email" id="input-email" required>
             </div>
 
-            <button class="btn mt-md w-full bg-primary-600 text-primary-50 hover:bg-primary-500">Request reset link</button>
+            <button class="btn mt-md w-full bg-primary-500 text-primary-50 hover:bg-primary-500">Request reset link</button>
             <div class="text-center mt-sm">
                 <p class="text-sm"><a href="#">&larr; Back to login</a></p>
             </div>
