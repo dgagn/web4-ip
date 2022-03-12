@@ -35,7 +35,6 @@
     },
     "scripts": {
         "fix-cs": [
-            "npx prettier app/**/* database/**/* routes/**/* --write",
             "php-cs-fixer fix app",
             "php-cs-fixer fix database",
             "php-cs-fixer fix routes"
