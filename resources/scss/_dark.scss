@@ -3,20 +3,20 @@
 @use "sass:map";
 
 $dark-colors: (
-    primary: mapReverse($teal),
-    secondary: mapReverse($purple),
-    contrast: mapReverse($slate),
-    error: mapReverse($red),
-    success: mapReverse($green),
-    warning: mapReverse($yellow),
-    caution: mapReverse($orange),
+  primary: mapReverse($teal),
+  secondary: mapReverse($purple),
+  contrast: mapReverse($slate),
+  error: mapReverse($red),
+  success: mapReverse($green),
+  warning: mapReverse($yellow),
+  caution: mapReverse($orange),
 );
 
 .dark {
-    --color-bg: #{map.get(map.get($dark-colors, contrast), 50)};
-    @each $color, $value in $dark-colors {
-        @each $color-intensity, $hsl in $value {
-            --color-#{$color}-#{$color-intensity}: #{$hsl};
-        }
+  --color-bg: #{map.get(map.get($dark-colors, contrast), 50)};
+  @each $color, $value in $dark-colors {
+    @each $color-intensity, $hsl in $value {
+      --color-#{$color}-#{$color-intensity}: #{$hsl};
     }
+  }
 }
