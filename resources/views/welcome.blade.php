@@ -7,7 +7,7 @@
                 Search fraudulent servers to make sure of it's integrity.
             </p>
 
-            <form method="POST">
+            <form method="POST" action="">
                 @csrf
 
                 <div class="mt-lg">

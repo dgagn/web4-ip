@@ -2241,7 +2241,7 @@ var Alert = /*#__PURE__*/function (_HTMLElement) {
       (_this$classList = this.classList).add.apply(_this$classList, _toConsumableArray("transition-opacity bg-error-200 opacity-100 dark:bg-error-200/30 p-sm flex justify-between rounded-md".split(" ")));
 
       this.innerHTML = "\n      <div class=\"flex\">\n      <svg class=\"fill-error-500 h-md w-md mr-sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n          <path d=\"M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M13.645,5L13,14h-2l-0.608-9 H13.645z M12,20c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2c1.105,0,2,0.895,2,2C14,19.105,13.105,20,12,20z\"></path>\n      </svg>\n      <p class=\"text-sm\">".concat(this.message, "</p>\n      </div>\n\n      <button class=\"mr-sm self-center\">\n          <svg class=\"fill-contrast-900\" xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><title>e-remove</title><g ><path d=\"M14.7,1.3c-0.4-0.4-1-0.4-1.4,0L8,6.6L2.7,1.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L6.6,8l-5.3,5.3 c-0.4,0.4-0.4,1,0,1.4C1.5,14.9,1.7,15,2,15s0.5-0.1,0.7-0.3L8,9.4l5.3,5.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L9.4,8l5.3-5.3C15.1,2.3,15.1,1.7,14.7,1.3z\"></path></g></svg>\n      </button>\n    ");
-      this.querySelector('button').addEventListener("click", function (e) {
+      this.querySelector("button").addEventListener("click", function (e) {
         e.preventDefault();
 
         _this2.close();
@@ -2334,12 +2334,12 @@ var TestComponent = /*#__PURE__*/function (_HTMLElement) {
     get: function get() {
       var _this$getAttribute;
 
-      return (_this$getAttribute = this.getAttribute('oncloseclass')) !== null && _this$getAttribute !== void 0 ? _this$getAttribute : '';
+      return (_this$getAttribute = this.getAttribute("oncloseclass")) !== null && _this$getAttribute !== void 0 ? _this$getAttribute : "";
     }
   }, {
     key: "delay",
     get: function get() {
-      var delay = this.getAttribute('delay');
+      var delay = this.getAttribute("delay");
       return isNaN(delay) ? 0 : delay;
     }
   }, {
@@ -2347,8 +2347,8 @@ var TestComponent = /*#__PURE__*/function (_HTMLElement) {
     value: function connectedCallback() {
       var _this2 = this;
 
-      var close = this.querySelector('button');
-      close.addEventListener('click', function (e) {
+      var close = this.querySelector("button");
+      close.addEventListener("click", function (e) {
         e.preventDefault();
 
         _this2.close();
@@ -2362,13 +2362,13 @@ var TestComponent = /*#__PURE__*/function (_HTMLElement) {
       if (this.oncloseclass) {
         var _this$classList;
 
-        (_this$classList = this.classList).add.apply(_this$classList, _toConsumableArray(this.oncloseclass.split(' ')));
+        (_this$classList = this.classList).add.apply(_this$classList, _toConsumableArray(this.oncloseclass.split(" ")));
       }
 
       window.setTimeout(function () {
         _this3.parentElement.removeChild(_this3);
 
-        _this3.dispatchEvent(new CustomEvent('close'));
+        _this3.dispatchEvent(new CustomEvent("close"));
       }, this.delay);
     }
   }]);
@@ -2376,7 +2376,7 @@ var TestComponent = /*#__PURE__*/function (_HTMLElement) {
   return TestComponent;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
-customElements.define('test-component', TestComponent);
+customElements.define("test-component", TestComponent);
 
 /***/ }),
 
@@ -2434,22 +2434,22 @@ var ThemeSwitcher = /*#__PURE__*/function (_HTMLElement) {
     key: "connectedCallback",
     value: function connectedCallback() {
       this.innerHTML = "\n      <input type=\"checkbox\">\n    ";
-      var input = this.querySelector('input');
-      input.addEventListener('change', function (e) {
-        var theme = e.currentTarget.checked ? 'dark' : 'light';
-        if (theme === 'dark') document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');
-        (0,_cookie__WEBPACK_IMPORTED_MODULE_0__.cookie)('theme', theme, {
+      var input = this.querySelector("input");
+      input.addEventListener("change", function (e) {
+        var theme = e.currentTarget.checked ? "dark" : "light";
+        if (theme === "dark") document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");
+        (0,_cookie__WEBPACK_IMPORTED_MODULE_0__.cookie)("theme", theme, {
           expires: 7
         });
       });
-      input.checked = document.documentElement.classList.contains('dark');
+      input.checked = document.documentElement.classList.contains("dark");
     }
   }]);
 
   return ThemeSwitcher;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
-customElements.define('theme-switcher', ThemeSwitcher);
+customElements.define("theme-switcher", ThemeSwitcher);
 
 /***/ }),
 
@@ -2478,14 +2478,14 @@ __webpack_require__(/*! ./TestComponent */ "./resources/js/TestComponent.js");
  * cf : https://github.com/turbolinks/turbolinks/issues/75
  */
 
-document.addEventListener('turbolinks:click', function (e) {
+document.addEventListener("turbolinks:click", function (e) {
   var anchorElement = e.target;
   var isSamePageAnchor = anchorElement.hash && anchorElement.origin === window.location.origin && anchorElement.pathname === window.location.pathname;
 
   if (isSamePageAnchor) {
     turbolinks__WEBPACK_IMPORTED_MODULE_0___default().controller.pushHistoryWithLocationAndRestorationIdentifier(e.data.url, turbolinks__WEBPACK_IMPORTED_MODULE_0___default().uuid());
     e.preventDefault();
-    window.dispatchEvent(new Event('hashchange'));
+    window.dispatchEvent(new Event("hashchange"));
   }
 }); //Turbolinks.start();
 
@@ -2552,7 +2552,7 @@ function cookie(name) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
   if (value === undefined) {
-    var cookies = document.cookie.split(';');
+    var cookies = document.cookie.split(";");
 
     var _iterator = _createForOfIteratorHelper(cookies),
         _step;
@@ -2561,7 +2561,7 @@ function cookie(name) {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var _cookie = _step.value;
 
-        var _cookie$split = _cookie.split('='),
+        var _cookie$split = _cookie.split("="),
             _cookie$split2 = _slicedToArray(_cookie$split, 2),
             k = _cookie$split2[0],
             v = _cookie$split2[1];
@@ -2580,7 +2580,7 @@ function cookie(name) {
   }
 
   if (value === null) {
-    value = '';
+    value = "";
     options.expires = -365;
   } else {
     value = escape(value);
@@ -2589,18 +2589,18 @@ function cookie(name) {
   if (options.expires) {
     var d = new Date();
     d.setDate(d.getDate() + options.expires);
-    value += '; expires=' + d.toUTCString();
+    value += "; expires=" + d.toUTCString();
   }
 
   if (options.domain) {
-    value += '; domain=' + options.domain;
+    value += "; domain=" + options.domain;
   }
 
   if (options.path) {
-    value += '; path=' + options.path;
+    value += "; path=" + options.path;
   }
 
-  document.cookie = name + '=' + value;
+  document.cookie = name + "=" + value;
 }
 
 /***/ }),
